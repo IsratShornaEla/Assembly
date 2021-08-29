@@ -1,0 +1,14 @@
+.STACK 100H
+.MODEL SMALL
+.DATA
+.CODE
+ MAIN PROC
+    MOV AH,1
+    INT 21H
+    
+    MOV AH,2
+    MOV DL,"H"
+    INT 21H
+    
+   MAIN ENDP
+ END MAIN
