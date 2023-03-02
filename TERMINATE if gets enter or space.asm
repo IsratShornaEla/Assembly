@@ -7,27 +7,22 @@
   
 .CODE
   MAIN PROC
-   XOR CX,CX
    
-   MOV AH,2
-   MOV CX,4
-    
-   MOV AX,1   
+    MOV AH,1         
     COUNT:
-   
-    MUL CX 
-   LOOP COUNT
+    INT 21H
+     
+    CMP AL,0DH
+    JE END_IF
     
-     
+    
+    JMP COUNT 
+    
    
-   MOV AH,2
-   ADD AX,48
-   MOV DX,AX
-    INT 21H 
-     
+  
                
                
-           
+  END_IF:             
      
    
     MAIN ENDP
